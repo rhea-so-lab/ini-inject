@@ -1,11 +1,11 @@
-# INI Loader
+# INI Inject
 
 ini 파일을 여러분이 지정한 타입에 맞춰 들고와 변환해주는 모듈입니다.  
 
 ## Badges
 
 <!-- Badges -->
-[![CircleCI](https://circleci.com/gh/rhea-so/INILoader/tree/main.svg?style=svg)](https://circleci.com/gh/rhea-so/INILoader/tree/main)
+[![CircleCI](https://circleci.com/gh/rhea-so-lab/ini-inject/tree/main.svg?style=svg)](https://circleci.com/gh/rhea-so-lab/ini-inject/tree/main)
 [![License](https://img.shields.io/github/license/rhea-so/INILoader)](https://raw.githubusercontent.com//rhea-so/INILoader/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/rhea-so/INILoader)](https://github.com/rhea-so/INILoader/issues)
 [![Pull Request](https://img.shields.io/github/issues-pr/rhea-so/INILoader)](https://github.com/rhea-so/INILoader/pulls)
