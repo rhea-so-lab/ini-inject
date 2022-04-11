@@ -28,6 +28,15 @@ export class INITest3 {
   static MATH_SCORE: number;
 }
 
+@LoadFile("config/test4.env", { withProcessEnv: true })
+export class INITest4 {
+  @Column()
+  static NAME: string;
+
+  @Column()
+  static MATH_SCORE: number;
+}
+
 describe("Environment Value", () => {
   it("01_test1.ini", () => {
     expect(INITest1.NAME).to.be.equal("rhea");
@@ -42,5 +51,10 @@ describe("Environment Value", () => {
   it("03_test3.env", () => {
     expect(INITest3.NAME).to.be.equal("rhea-so");
     expect(INITest3.MATH_SCORE).to.be.equal(10);
+  });
+
+  it("04_test4.env", () => {
+    expect(process.env.NAME).to.be.equal("naver");
+    expect(process.env.MATH_SCORE).to.be.equal("50");
   });
 });

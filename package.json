@@ -1,6 +1,6 @@
 {
   "name": "ini-inject",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ini 파일을 여러분이 지정한 타입에 맞춰 들고와 변환해주는 모듈입니다.",
   "author": "rhea",
   "keywords": [

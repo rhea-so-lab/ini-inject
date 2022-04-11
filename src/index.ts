@@ -31,6 +31,11 @@ export function Column(): PropertyDecorator {
   };
 }
 
+interface ILoadFileOptions {
+  /** process.env에 inject 합니다. type은 string으로 고정됩니다. number를 넣어도 string, boolean을 넣어도 string. */
+  withProcessEnv?: boolean;
+}
+
 /**
  * ini 파일을 읽어와주는 데코레이터입니다.
  * 들고 오고 싶은 ini 파일의 이름을 적어주세요. 이름만!
@@ -40,7 +45,10 @@ export function Column(): PropertyDecorator {
  * ㅤclass INISetting {}
  * ```
  */
-export function LoadFile(filename: string): ClassDecorator {
+export function LoadFile(
+  filename: string,
+  options?: ILoadFileOptions
+): ClassDecorator {
   if (!filename.includes(".env") && !filename.includes(".ini")) {
     filename += ".ini";
   }
@@ -62,6 +70,11 @@ export function LoadFile(filename: string): ClassDecorator {
         }
 
         object[index] = column.type(parsedData[index]);
+
+        // 인자로 true를 넣었을때만 반응
+        if (options?.withProcessEnv === true) {
+          process.env[index] = column.type(parsedData[index]);
+        }
       }
 
       // Validation - Class에는 정의되어있는데, INI에는 정의되어있지 않으면 에러 발생
